@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bler1ugyg4drv"]
+
+[ext_resource type="Script" uid="uid://8esgsvk2ropd" path="res://Scripts/MainMenu.cs" id="1_tt5f1"]
+[ext_resource type="PackedScene" uid="uid://ctfydgn6mbnn4" path="res://Scenes/Game.tscn" id="2_853f1"]
+[ext_resource type="FontFile" uid="uid://c5deqtvbeyymv" path="res://Assets/Fonts/PixeloidMono.ttf" id="3_8saeu"]
+
+[node name="MainMenu" type="Control" unique_id=1253358511]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tt5f1")
+GameScene = ExtResource("2_853f1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1057002354]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1165.0
+offset_bottom = 661.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101960786, 0.101960786, 0.18039216, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=138912864]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -150.0
+anchor_top = -100.0
+anchor_right = 150.0
+anchor_bottom = 100.0
+offset_left = 3.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_visual_only = false
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=474002735]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8saeu")
+theme_override_font_sizes/font_size = 36
+text = "КАРТОЧНЫЙ СИНТЕЗ"
+horizontal_alignment = 1
+
+[node name="Playbutton" type="Button" parent="VBoxContainer" unique_id=837855506]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8saeu")
+theme_override_font_sizes/font_size = 20
+text = "Играть"
+
+[node name="Quitbutton" type="Button" parent="VBoxContainer" unique_id=455100745]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8saeu")
+theme_override_font_sizes/font_size = 20
+text = "Выйти"
+
+[node name="Hightscorelabel" type="Label" parent="VBoxContainer" unique_id=783941307]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8saeu")
+text = "Твой рекорд: 0"
+
+[connection signal="pressed" from="VBoxContainer/Playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quitbutton" to="." method="_on_quitbutton_pressed"]

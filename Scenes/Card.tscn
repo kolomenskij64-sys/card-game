@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://mx8b5j1x1x62"]
+
+[ext_resource type="Script" uid="uid://b3d0ibc4ljng" path="res://Scripts/Card.cs" id="1_pnb5n"]
+[ext_resource type="FontFile" uid="uid://c5deqtvbeyymv" path="res://Assets/Fonts/PixeloidMono.ttf" id="2_3p273"]
+
+[node name="Card" type="PanelContainer" unique_id=1336552481]
+script = ExtResource("1_pnb5n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1578433211]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Sprite2D" type="TextureRect" parent="VBoxContainer" unique_id=1333875854]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DamageLabel" type="Label" parent="VBoxContainer" unique_id=831784680]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3p273")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1

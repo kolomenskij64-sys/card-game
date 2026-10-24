@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://ctfydgn6mbnn4"]
+
+[ext_resource type="Texture2D" uid="uid://cbtq86uvpir61" path="res://Assets/Backrounds/game_pole.png" id="1_b2bpf"]
+[ext_resource type="Script" uid="uid://cjfgaudgpsyr5" path="res://Scripts/DropZone.cs" id="1_fi34h"]
+[ext_resource type="FontFile" uid="uid://c5deqtvbeyymv" path="res://Assets/Fonts/PixeloidMono.ttf" id="2_kldst"]
+[ext_resource type="Script" uid="uid://ct2peh5ry77l0" path="res://Scripts/GameManager.cs" id="2_pg1q3"]
+[ext_resource type="PackedScene" uid="uid://mx8b5j1x1x62" path="res://Scenes/Card.tscn" id="3_j5yw3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bdx2l"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7itkp"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sa8ym"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d67ce"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et50o"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xy36c"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8fiw"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iosst"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5dw5"]
+bg_color = Color(0.2901961, 0.2901961, 0.2901961, 1)
+corner_detail = 5
+
+[node name="Game" type="Node2D" unique_id=2058361704]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2036185366]
+
+[node name="UIRoot" type="Control" parent="UI" unique_id=267683580]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 753.0
+offset_right = 753.0
+offset_bottom = 34.0
+
+[node name="Background" type="TextureRect" parent="UI/UIRoot" unique_id=980018063]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -753.0
+offset_right = 400.0
+offset_bottom = 649.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_b2bpf")
+
+[node name="BoardGrid" type="GridContainer" parent="UI/UIRoot" unique_id=1304409978]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = 150.0
+offset_right = -53.0
+offset_bottom = 453.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="DropZone" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=2035395008]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bdx2l")
+script = ExtResource("1_fi34h")
+
+[node name="DropZone2" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=1637276601]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7itkp")
+script = ExtResource("1_fi34h")
+
+[node name="DropZone3" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=480329324]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sa8ym")
+script = ExtResource("1_fi34h")
+
+[node name="DropZone4" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=387181236]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d67ce")
+script = ExtResource("1_fi34h")
+
+[node name="DropZone5" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=797330665]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_et50o")
+script = ExtResource("1_fi34h")
+
+[node name="DropZone6" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=2066630686]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xy36c")
+script = ExtResource("1_fi34h")
+
+[node name="DropZone7" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=773829834]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8fiw")
+script = ExtResource("1_fi34h")
+
+[node name="DropZone8" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=1877033508]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iosst")
+script = ExtResource("1_fi34h")
+
+[node name="DropZone9" type="PanelContainer" parent="UI/UIRoot/BoardGrid" unique_id=537486142]
+custom_minimum_size = Vector2(80, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e5dw5")
+script = ExtResource("1_fi34h")
+
+[node name="EndTurnButton" type="Button" parent="UI/UIRoot" unique_id=178751495]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = 403.0
+offset_right = 126.0
+offset_bottom = 452.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_kldst")
+text = "Завершить ход"
+
+[node name="Hand" type="HBoxContainer" parent="UI/UIRoot" unique_id=1479618204]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -229.0
+offset_top = 466.0
+offset_right = -133.0
+offset_bottom = 586.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="PlayerHP" type="Label" parent="UI/UIRoot" unique_id=949666909]
+layout_mode = 1
+offset_left = -528.0
+offset_top = 430.0
+offset_right = -336.0
+offset_bottom = 464.0
+theme_override_fonts/font = ExtResource("2_kldst")
+theme_override_font_sizes/font_size = 24
+text = "Здоровье: 20"
+
+[node name="Playershield" type="Label" parent="UI/UIRoot" unique_id=1793388480]
+layout_mode = 0
+offset_left = -502.0
+offset_top = 388.0
+offset_right = -358.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_kldst")
+theme_override_font_sizes/font_size = 24
+text = "Защита: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyHP" type="Label" parent="UI/UIRoot" unique_id=1977696063]
+layout_mode = 0
+offset_left = -324.0
+offset_top = 106.0
+offset_right = -84.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0.8235294, 0.2627451, 0.18039216, 1)
+theme_override_fonts/font = ExtResource("2_kldst")
+theme_override_font_sizes/font_size = 20
+text = "Здоровье врага: 30"
+vertical_alignment = 1
+
+[node name="EnemyAttackLabel" type="Label" parent="UI/UIRoot" unique_id=1311662584]
+layout_mode = 0
+offset_left = -37.0
+offset_top = 69.0
+offset_right = 73.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
+theme_override_fonts/font = ExtResource("2_kldst")
+text = "Урон: 5"
+vertical_alignment = 1
+
+[node name="EnemyNameLabel" type="Label" parent="UI/UIRoot" unique_id=899438576]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -243.0
+offset_top = 69.0
+offset_right = -93.0
+offset_bottom = 92.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.6666667, 0.6666667, 0.6666667, 1)
+theme_override_fonts/font = ExtResource("2_kldst")
+text = "Противник: ???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameManager" type="Node2D" parent="." unique_id=340097425 node_paths=PackedStringArray("PlayerHpLabel", "PlayerShieldLabel", "EnemyHpLabel", "EnemyNameLabel", "EnemyAttackLabel", "HandContainer", "BoardGrid")]
+script = ExtResource("2_pg1q3")
+CardScene = ExtResource("3_j5yw3")
+PlayerHpLabel = NodePath("../UI/UIRoot/PlayerHP")
+PlayerShieldLabel = NodePath("../UI/UIRoot/Playershield")
+EnemyHpLabel = NodePath("../UI/UIRoot/EnemyHP")
+EnemyNameLabel = NodePath("../UI/UIRoot/EnemyNameLabel")
+EnemyAttackLabel = NodePath("../UI/UIRoot/EnemyAttackLabel")
+HandContainer = NodePath("../UI/UIRoot/Hand")
+BoardGrid = NodePath("../UI/UIRoot/BoardGrid")
+
+[connection signal="pressed" from="UI/UIRoot/EndTurnButton" to="GameManager" method="_on_end_turn_button_pressed"]

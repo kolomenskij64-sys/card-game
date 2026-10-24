@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bxmue1qpn61gw"]
+
+[ext_resource type="Script" uid="uid://5opyq3hx5c2n" path="res://Scripts/GameOver.cs" id="1_m5628"]
+[ext_resource type="FontFile" uid="uid://c5deqtvbeyymv" path="res://Assets/Fonts/PixeloidMono.ttf" id="2_k52d1"]
+
+[node name="GameOver" type="Control" unique_id=49482208 node_paths=PackedStringArray("ResultLabel", "FinalScoreLabel", "HighScoreLabel", "RestartButton", "MenuButton", "QuitButton")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_m5628")
+ResultLabel = NodePath("Background/UIRoot/VBoxContainer/GameOverTitle")
+FinalScoreLabel = NodePath("Background/UIRoot/VBoxContainer/FinalScoreLabel")
+HighScoreLabel = NodePath("Background/UIRoot/VBoxContainer/HighScoreLabel")
+RestartButton = NodePath("Background/UIRoot/VBoxContainer/RestartButton")
+MenuButton = NodePath("Background/UIRoot/VBoxContainer/MenuButton")
+QuitButton = NodePath("Background/UIRoot/VBoxContainer/QuitButton")
+
+[node name="Background" type="ColorRect" parent="." unique_id=430697856]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15409538, 0.22166917, 0.32515326, 1)
+
+[node name="UIRoot" type="Control" parent="Background" unique_id=1105411229]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/UIRoot" unique_id=353873010]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 373.0
+offset_top = 159.0
+offset_right = 773.0
+offset_bottom = 459.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="GameOverTitle" type="Label" parent="Background/UIRoot/VBoxContainer" unique_id=1282534301]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k52d1")
+theme_override_font_sizes/font_size = 48
+text = "ИГРА ОКОНЧЕНА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="Background/UIRoot/VBoxContainer" unique_id=1572673584]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k52d1")
+theme_override_font_sizes/font_size = 24
+text = "Финальный счет: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="Background/UIRoot/VBoxContainer" unique_id=352298319]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0.30980393, 1)
+theme_override_fonts/font = ExtResource("2_k52d1")
+theme_override_font_sizes/font_size = 20
+text = "Рекорд: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Background/UIRoot/VBoxContainer" unique_id=1467289661]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k52d1")
+theme_override_font_sizes/font_size = 20
+text = "Играть снова"
+
+[node name="MenuButton" type="Button" parent="Background/UIRoot/VBoxContainer" unique_id=1235226257]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k52d1")
+theme_override_font_sizes/font_size = 20
+text = "Главное меню"
+
+[node name="QuitButton" type="Button" parent="Background/UIRoot/VBoxContainer" unique_id=968601180]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k52d1")
+theme_override_font_sizes/font_size = 20
+text = "Выйти"
+
+[connection signal="pressed" from="Background/UIRoot/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Background/UIRoot/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Background/UIRoot/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
